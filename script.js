@@ -117,3 +117,19 @@ window.addEventListener('mousemove', (e) => {
 // Call animations
 firstPageAnim();
 circleChaptaKaro();
+
+function updateTime() {
+  const now = new Date();
+  const options = {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'Asia/Kolkata',
+    hour12: true
+  };
+  const timeString = now.toLocaleTimeString('en-IN', options);
+  document.getElementById('time').innerText = timeString + " IST";
+}
+
+setInterval(updateTime, 1000);
+updateTime();
